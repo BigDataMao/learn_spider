@@ -1,8 +1,10 @@
 import requests
 from lxml import etree
+
 '''
 第一个爬虫:链家二手房第一页,目标是打印输出所有的房源标题
 '''
+
 
 class LianjiaSpider:
     # 初始化
