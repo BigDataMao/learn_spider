@@ -3,10 +3,10 @@
 有输入,打印翻译结果
 2023年3月11日
 """
+import json
 import time
-from hashlib import md5
-
 import requests
+from hashlib import md5
 
 
 def md5_string(string):
@@ -72,10 +72,9 @@ class Youdao_Spider:
             'mysticTime': mysticTime,
             'keyfrom': 'fanyi.web'
         }
-        html = requests.post(url=self.url, data=data, headers=self.headers)
-        html_zip = html.headers.get('Content-Encoding')
-        print(html_zip)
-        print(html.content.decode('utf-8'))
+        html = requests.post(url=self.url, data=data, headers=self.headers).json()
+        print(html)
+
 
     def run(self):
         word = input('请输入您要翻译的单词:')
