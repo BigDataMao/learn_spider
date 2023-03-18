@@ -1,6 +1,8 @@
 from selenium import webdriver
+# 新版selenium的写法
 from selenium.webdriver.common.by import By
 
+# 运行完毕不关窗口
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option('detach', True)
 
